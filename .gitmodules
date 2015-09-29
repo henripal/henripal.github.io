@@ -1,0 +1,3 @@
+[submodule "TestReveal"]
+	path = TestReveal
+	url = https://github.com/henripal/TestReveal.git
