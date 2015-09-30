@@ -12,6 +12,12 @@ var x3 = 90;
 var y3 = 100;
 var dx3 = 1;
 var dy3 = -1;
+var canvasMinX;
+var canvasMaxX;
+var canvasMinY;
+var canvasMaxY;
+
+var randFact=1;
 
 var Width;
 var Height;
@@ -19,12 +25,29 @@ var ctx;
 var color;
 var temp;
 
+
 //get a reference to the canvas
 function init() {
 	ctx = $('#canvas')[0].getContext("2d");
 	Width = $('#canvas').width();
 	Height = $('#canvas').height();
 	return setInterval(draw,10);
+}
+
+function init_mouse() {
+  canvasMinX = $("#canvas").offset().left;
+	canvasMinY = $("#canvas").offset().top;
+  canvasMaxX = canvasMinX + Width;
+	canvasMaxY = canvasMinY + Height;
+}
+
+function onMouseMove(evt) {
+  if (evt.pageX > canvasMinX && evt.pageX < canvasMaxX) {
+    x3 = evt.pageX - canvasMinX;
+  }
+	if (evt.pageY > canvasMinY && evt.pageY < canvasMaxY) {
+    y3 = evt.pageY - canvasMinY;
+  }
 }
 
 //draw a circle
@@ -49,6 +72,13 @@ function clear() {
 	ctx.clearRect(0,0,Width,Height);
 }
 
+function getRand() {
+	if  (Math.random() >= 0.5) {return 1;	}
+		else { return -1;}
+}
+
+$(document).mousemove(onMouseMove);
+
 function draw() {
 	clear();
 	circle(x2,y2,10,"rgba(200,200,200,0.7)");
@@ -63,10 +93,7 @@ function draw() {
     dx2 = -dx2;
   if (y2 + dy2 > Height || y2 + dy2 < 0)
     dy2 = -dy2;
-		if (x3 + dx3 > Width || x3 + dx3 < 0)
-	    dx3 = -dx3;
-	  if (y3 + dy3 > Height || y3 + dy3 < 0)
-	    dy3 = -dy3;
+
 	if (Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)) < 20) {
 		temp=dx1;
 		dx1=dx2;
@@ -92,14 +119,12 @@ function draw() {
 		dy3=temp;
 	}
 
-
-
 	x1 += dx1;
 	y1 += dy1;
 	x2 += dx2;
 	y2 += dy2;
-	x3 += dx3;
-	y3 += dy3;
+
 }
 
 init();
+init_mouse();
