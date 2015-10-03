@@ -1,0 +1,32 @@
+.reveal section img
+{
+  border-style: none;
+  max-width: 95%;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+}
+
+.reveal .footer {
+  /*position: absolute;*/
+  bottom: 0em;
+  /*left: 1em;*/
+  font-size: 0.5em;
+}
+
+.reveal .imco-container{
+  margin: 20px 20px 0 0;
+
+     overflow: auto
+}
+
+.reveal .imco-container .imco-im{
+  max-width: 50%;
+  float: left;
+
+}
+.reveal .imco-container .imco-co{
+  max-width: 50%;
+  float: right;
+
+}
