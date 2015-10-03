@@ -1,3 +1,6 @@
 [submodule "TestReveal"]
 	path = TestReveal
 	url = https://github.com/henripal/TestReveal.git
+[submodule "JCoct1"]
+	path = JCoct1
+	url = https://github.com/henripal/JCoct1.git
