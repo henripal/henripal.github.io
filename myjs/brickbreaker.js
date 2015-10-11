@@ -12,12 +12,12 @@ var x3 = 90;
 var y3 = 100;
 var dx3 = 1;
 var dy3 = -1;
+var canvasMinY;
 var canvasMinX;
 var canvasMaxX;
-var canvasMinY;
 var canvasMaxY;
 
-var randFact=1;
+var randFact = 1;
 
 var Width;
 var Height;
@@ -25,25 +25,24 @@ var ctx;
 var color;
 var temp;
 
-
 //get a reference to the canvas
 function init() {
-	ctx = $('#canvas')[0].getContext("2d");
-	Width = $('#canvas').width();
-	Height = $('#canvas').height();
-	return setInterval(draw,10);
+ ctx = $('#canvas')[0].getContext("2d");
+    Width = $('#canvas').width();
+    Height = $('#canvas').height();
+    return setInterval(draw,10);
 }
 
 function init_mouse() {
-  canvasMinX = $("#canvas").offset().left;
-	canvasMinY = $("#canvas").offset().top;
-  canvasMaxX = canvasMinX + Width;
-	canvasMaxY = canvasMinY + Height;
+canvasMinX = $("#canvas").offset().left;
+    canvasMinY = $("#canvas").offset().top;
+    canvasMaxX = canvasMinX + Width;
+    canvasMaxY = canvasMinY + Height;
 }
 
 function onMouseMove(evt) {
-  if (evt.pageX > canvasMinX && evt.pageX < canvasMaxX) {
-    x3 = evt.pageX - canvasMinX;
+   if (evt.pageX > canvasMinX && evt.pageX < canvasMaxX) {
+    x3=evt.pageX - canvasMinX;
   }
 	if (evt.pageY > canvasMinY && evt.pageY < canvasMaxY) {
     y3 = evt.pageY - canvasMinY;
@@ -51,7 +50,7 @@ function onMouseMove(evt) {
 }
 
 //draw a circle
-function circle(x,y,r,color) {
+function ircle(x,y,r,color) {
 	ctx.fillStyle=color;
 	ctx.beginPath();
 	ctx.arc(x, y, r, 0, Math.PI*2, true);
@@ -87,12 +86,12 @@ function draw() {
 
 	if (x1 + dx1 > Width || x1 + dx1 < 0)
     dx1 = -dx1;
-  if (y1 + dy1 > Height || y1 + dy1 < 0)
+  if (y1 + dy1 >  Height || y1 + dy1 < 0)
     dy1 = -dy1;
 	if (x2 + dx2 > Width || x2 + dx2 < 0)
     dx2 = -dx2;
   if (y2 + dy2 > Height || y2 + dy2 < 0)
-    dy2 = -dy2;
+    dy2  = -dy2;
 
 	if (Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1)) < 20) {
 		temp=dx1;
@@ -104,10 +103,10 @@ function draw() {
 	}
 	if (Math.sqrt((x3-x1)*(x3-x1) + (y3-y1)*(y3-y1)) < 20) {
 		temp=dx1;
-		dx1=dx3;
+dx1=dx3;
 		dx3=temp;
 		temp=dy1;
-		dy1=dy3;
+		 dy1=dy3;
 		dy3=temp;
 	}
 	if (Math.sqrt((x3-x2)*(x3-x2) +(y3-y2)*(y3-y2)) < 20) {

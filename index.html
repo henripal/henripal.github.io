@@ -1,13 +1,53 @@
 ---
 layout: default
 ---
-<div class="container-fluid">
-{% for post in site.posts limit: 10 %}
 
-<h2>{{ post.title }}</h2>
-   <h4>{{ post.date | date_to_long_string }}</h4>
-   <p>
-     <a href="{{ post.url }}">Read Post</a>
-   </p>
-{% endfor %}
+<div class="row">
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ site.posts[0].title }}</h3>
+            </div>
+            <div class="panel-body">
+                hi! read <a href="{{ site.posts[0].url }}">this now!</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ site.posts[1].title }}</h3>
+            </div>
+            <div class="panel-body">
+                hi! read <a href="{{ site.posts[1].url }}">this now!</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ site.posts[2].title }}</h3>
+            </div>
+            <div class="panel-body">
+                hi! read <a href="{{ site.posts[2].url }}">this now!</a>
+            </div>
+        </div>
+    </div>
 </div>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ site.posts[3].title }}</h3>
+            </div>
+            <div class="panel-body">
+                hi! read <a href="{{ site.posts[3].url }}">this now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
