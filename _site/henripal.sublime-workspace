@@ -8,10 +8,26 @@
 	"buffers":
 	[
 		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 669,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "about.html",
+			"settings":
+			{
+				"buffer_size": 70,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "_includes/header.html",
 			"settings":
 			{
-				"buffer_size": 1917,
+				"buffer_size": 1551,
 				"line_ending": "Unix"
 			}
 		}
@@ -82,13 +98,33 @@
 	"expanded_folders":
 	[
 		"/Users/henripal/projects/henripal.github.io",
-		"/Users/henripal/projects/henripal.github.io/_includes",
-		"/Users/henripal/projects/henripal.github.io/_layouts"
+		"/Users/henripal/projects/henripal.github.io/_layouts",
+		"/Users/henripal/projects/henripal.github.io/_posts",
+		"/Users/henripal/projects/henripal.github.io/_site/2015",
+		"/Users/henripal/projects/henripal.github.io/_site/2015/09",
+		"/Users/henripal/projects/henripal.github.io/_site/2015/09/28",
+		"/Users/henripal/projects/henripal.github.io/_site/2015/09/28/zerothpost",
+		"/Users/henripal/projects/henripal.github.io/_site/JCoct1/myjs",
+		"/Users/henripal/projects/henripal.github.io/css",
+		"/Users/henripal/projects/henripal.github.io/JCoct1/images"
 	],
 	"file_history":
 	[
-		"/Users/henripal/projects/henripal.github.io/myjs/brickbreaker.js",
+		"/Users/henripal/projects/henripal.github.io/_layouts/default.html",
+		"/Users/henripal/projects/henripal.github.io/_layouts/post.html",
+		"/Users/henripal/projects/henripal.github.io/css/custom.css",
+		"/Users/henripal/projects/henripal.github.io/_includes/footer.html",
+		"/Users/henripal/projects/henripal.github.io/_posts/2015-10-01-JC.html",
+		"/Users/henripal/projects/henripal.github.io/_posts/2015-09-28-zerothpost.html",
+		"/Users/henripal/projects/henripal.github.io/_posts/2015-09-29-firstpost.html",
 		"/Users/henripal/projects/henripal.github.io/_posts/2015-09-29-brickbreaker.html",
+		"/Users/henripal/projects/henripal.github.io/_plugins/active_page.rb",
+		"/Users/henripal/projects/henripal.github.io/about.html",
+		"/Users/henripal/projects/temp/bootstrap/dist/css/bootstrap.css",
+		"/Users/henripal/projects/henripal.github.io/_includes/header.html",
+		"/Users/henripal/projects/henripal.github.io/css/tufte.css",
+		"/Users/henripal/projects/henripal.github.io/_config.yml",
+		"/Users/henripal/projects/henripal.github.io/myjs/brickbreaker.js",
 		"/Users/henripal/projects/henripal.github.io/_site/index.html",
 		"/Users/henripal/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
 		"/Users/henripal/Library/Application Support/Sublime Text 3/Packages/User/AdvancedNewFile.sublime-settings",
@@ -98,12 +134,9 @@
 		"/Users/henripal/Library/Application Support/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
 		"/Users/henripal/projects/micro/test.py",
 		"/Users/henripal/projects/henripal.github.io/hi.html",
-		"/Users/henripal/projects/henripal.github.io/css/custom.css",
 		"/Users/henripal/projects/henripal.github.io/css/bootstrap.css",
 		"/Users/henripal/.bashrc",
 		"/Users/henripal/projects/henripal.github.io/myjs/testcript.js",
-		"/Users/henripal/projects/henripal.github.io/_posts/2015-10-01-JC.html",
-		"/Users/henripal/projects/henripal.github.io/_posts/2015-09-28-zerothpost.html",
 		"/Users/henripal/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/henripal/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/Users/henripal/Library/Application Support/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
@@ -126,6 +159,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" %}\"</",
 			"\nva",
 			"ar ",
 			"reference",
@@ -152,24 +186,80 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "_includes/header.html",
-					"semi_transient": true,
+					"file": "index.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1917,
+						"buffer_size": 669,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								39,
+								39
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "about.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 70,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								52,
+								52
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_includes/header.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1551,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								372,
+								372
 							]
 						],
 						"settings":
@@ -245,12 +335,16 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/projects/micro/xixi.sublime-project"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
@@ -269,7 +363,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 277.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
