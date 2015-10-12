@@ -1,53 +1,18 @@
 ---
 layout: default
 ---
-
 <div class="row">
-    <div class="col-sm-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">{{ site.posts[0].title }}</h3>
-            </div>
-            <div class="panel-body">
-                hi! read <a href="{{ site.posts[0].url }}">this now!</a>
-            </div>
+<div class="card-columns">
+{% for post in site.posts %}
+    <div class="card">
+        <div class="card-block">
+            <h4 class="card-title">{{ post.title }}</h4>
+            <p class="card-text">you should read this</p>
+        </div>
+        <div class="card-block">
+            hi! read <a href="{{ post.url }}">this now! </a>
         </div>
     </div>
-    <div class="col-sm-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">{{ site.posts[1].title }}</h3>
-            </div>
-            <div class="panel-body">
-                hi! read <a href="{{ site.posts[1].url }}">this now!</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">{{ site.posts[2].title }}</h3>
-            </div>
-            <div class="panel-body">
-                hi! read <a href="{{ site.posts[2].url }}">this now!</a>
-            </div>
-        </div>
-    </div>
+{% endfor %}
 </div>
-<div class="row">
-    <div class="col-sm-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">{{ site.posts[3].title }}</h3>
-            </div>
-            <div class="panel-body">
-                hi! read <a href="{{ site.posts[3].url }}">this now!</a>
-            </div>
-        </div>
-    </div>
 </div>
-
-
-
-
-

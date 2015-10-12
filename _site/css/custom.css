@@ -1,18 +1,8 @@
-body {
-  padding-top: 70px;
-  padding-bottom: 30px;
+ body {
+    padding: 1em;
 }
 
-.theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
-}
 
-.theme-showcase > p > .btn {
-  margin: 5px 0;
-}
-
-.theme-showcase .navbar .container {
-  width: auto;
+ div[role=main] {
+    padding: 1em;
 }
