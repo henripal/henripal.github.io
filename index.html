@@ -1,18 +1,24 @@
 ---
 layout: default
+menugroup: projects
 ---
-<div class="row">
-<div class="card-columns">
-{% for post in site.posts %}
-    <div class="card">
-        <div class="card-block">
-            <h4 class="card-title">{{ post.title }}</h4>
-            <p class="card-text">you should read this</p>
-        </div>
-        <div class="card-block">
-            hi! read <a href="{{ post.url }}">this now! </a>
-        </div>
+
+<div class="grid">
+    <div class="grid-sizer"></div>
+    {% for post in site.posts %}
+    <div class="grid-item">
+        <div class="card">
+            {% if post.thumbnail %}
+             <img class="card-img-top" src="{{ post.thumbnail }}"/>
+            {% endif %}
+            <div class="card-block">
+                <h4 class="card-title">{{ post.title }}</h4>
+                <p class="card-text">you should read this</p>
+            </div>
+            <div class="card-block">
+                hi! read <a href="{{ post.url }}">this now! </a>
+            </div>
+        </div>    
     </div>
-{% endfor %}
-</div>
+    {% endfor %}
 </div>

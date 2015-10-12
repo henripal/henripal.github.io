@@ -3,6 +3,20 @@
 }
 
 
+.grid-sizer,
+.grid-item { width: 33.3333%; padding: 1%;}
+/* 2 columns */
+.grid-item--width2 { width: 66%; padding: 1%;}
+
+.card-img-top {width: 100%;}
+
+@media screen and (max-width: 550px) {
+  /* 5 columns for larger screens */
+  .grid-sizer,
+    .grid-item { width: 100%; padding: 0;}
+  .grid-item--width2 { width: 100%; padding: 0; }
+}
+
  div[role=main] {
     padding: 1em;
 }

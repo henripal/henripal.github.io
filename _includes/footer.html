@@ -5,10 +5,38 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/docs.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="/js/masonry.pkgd.min.js"></script>
+
+    <!-- activate masonry in responsive mode -->
+    <script>
+        $('.grid').masonry({
+          // set itemSelector so .grid-sizer is not used in layout
+          itemSelector: '.grid-item',
+          //colummWidth: 200
+          // use element for option
+          columnWidth: '.grid-sizer',
+          percentPosition: true
+        });
+    </script>
+
+    <!-- script to activate the right menu item -->
+    <script>
+        $(function(){
+        var thisGroup =  "{{ page.menugroup }}";
+        thisGroupRegExp = new RegExp(thisGroup)
+
+        $('.nav li').each(function(){
+            if(thisGroupRegExp.test(this.id)){
+                $(this).addClass('active');
+            }
+            else {                
+             $(this).removeClass('active');   
+            }
+        });
+
+});
+    </script>
 
 </body>
 </html>
