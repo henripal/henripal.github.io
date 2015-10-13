@@ -1,5 +1,5 @@
 <div class="footer text-center text-muted">
-  <small>v0.1.1 - page made with <a href="http://v4-alpha.getbootstrap.com/">bootstrap 4</a>, <a href="http://jekyllrb.com/">jekyll</a>, and <a href="http://masonry.desandro.com/">masonry</a>. <a href="https://github.com/henripal/henripal.github.io">source <i class="fa fa-github"></i></a>.</small>
+  <small>v0.1.2 - page made with <a href="http://v4-alpha.getbootstrap.com/">bootstrap 4</a>, <a href="http://jekyllrb.com/">jekyll</a>, and <a href="http://masonry.desandro.com/">masonry</a>. <a href="https://github.com/henripal/henripal.github.io">source <i class="fa fa-github"></i></a>.</small>
 </footer>
 
 
@@ -9,10 +9,11 @@
    
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/masonry.pkgd.min.js"></script>
+    <script src="/js/imagesloaded.pkgd.min.js"></script>
 
     <!-- activate masonry in responsive mode -->
     <script>
-        $('.grid').masonry({
+        var $grid = $('.grid').masonry({
           // set itemSelector so .grid-sizer is not used in layout
           itemSelector: '.grid-item',
           //colummWidth: 200
@@ -20,8 +21,8 @@
           columnWidth: '.grid-sizer',
           percentPosition: true
         });
-        $('.grid').imagesLoaded().progress( function() {
-          $('.grid').masonry('layout');
+        $grid.imagesLoaded().progress( function() {
+          $grid.masonry('layout');
         });
     </script>
 
