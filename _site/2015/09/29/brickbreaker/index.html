@@ -31,6 +31,7 @@
          <ul class="nav navbar-nav pull-right">
            <li class="nav-item"><a href="https://twitter.com/henripal"><i class="fa fa-twitter navicon"></i> </a></li>
            <li class="nav-item"><a href="https://www.facebook.com/hpalacci"><i class="fa fa-facebook navicon"></i> </a></li>
+           <li class="nav-item"><a href="https://www.linkedin.com/pub/henri-palacci/59/746/a69"><i class="fa fa-linkedin navicon"></i> </a></li>
          </ul>
       </div>
         <div class="collapse navbar-toggleable-xs" id="nav-content">
@@ -72,7 +73,7 @@
 </div>
 
 <div class="footer text-center text-muted">
-  <small>page made with <a href="http://v4-alpha.getbootstrap.com/">bootstrap 4</a>, <a href="http://jekyllrb.com/">jekyll</a>, and <a href="http://masonry.desandro.com/">masonry</a>. <a href="https://github.com/henripal/henripal.github.io">source <i class="fa fa-github"></i></a>.</small>
+  <small>v0.1.1 - page made with <a href="http://v4-alpha.getbootstrap.com/">bootstrap 4</a>, <a href="http://jekyllrb.com/">jekyll</a>, and <a href="http://masonry.desandro.com/">masonry</a>. <a href="https://github.com/henripal/henripal.github.io">source <i class="fa fa-github"></i></a>.</small>
 </footer>
 
 
@@ -92,6 +93,9 @@
           // use element for option
           columnWidth: '.grid-sizer',
           percentPosition: true
+        });
+        $grid.imagesLoaded().progress( function() {
+          $grid.masonry('layout');
         });
     </script>
 

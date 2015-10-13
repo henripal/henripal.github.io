@@ -1,5 +1,5 @@
 <div class="footer text-center text-muted">
-  <small>v0.1 - page made with <a href="http://v4-alpha.getbootstrap.com/">bootstrap 4</a>, <a href="http://jekyllrb.com/">jekyll</a>, and <a href="http://masonry.desandro.com/">masonry</a>. <a href="https://github.com/henripal/henripal.github.io">source <i class="fa fa-github"></i></a>.</small>
+  <small>v0.1.1 - page made with <a href="http://v4-alpha.getbootstrap.com/">bootstrap 4</a>, <a href="http://jekyllrb.com/">jekyll</a>, and <a href="http://masonry.desandro.com/">masonry</a>. <a href="https://github.com/henripal/henripal.github.io">source <i class="fa fa-github"></i></a>.</small>
 </footer>
 
 
@@ -19,6 +19,9 @@
           // use element for option
           columnWidth: '.grid-sizer',
           percentPosition: true
+        });
+        $grid.imagesLoaded().progress( function() {
+          $grid.masonry('layout');
         });
     </script>
 
