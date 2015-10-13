@@ -8,16 +8,31 @@ menugroup: projects
     {% for post in site.posts %}
     <div class="grid-item">
         <div class="card">
+
             {% if post.thumbnail %}
-             <img class="card-img-top" src="{{ post.thumbnail }}"/>
+                <a href="{{ post.url }}"><img  class="card-img-top" src="{{ post.thumbnail }}"/></a>
             {% endif %}
+
             <div class="card-block">
-                <h4 class="card-title">{{ post.title }}</h4>
-                <p class="card-text">you should read this</p>
+                <h4 class="card-title">
+                    <a href="{{ post.url }}" class="cardlink">{{ post.title }}</a>
+                </h4>
+
+                <h6 class="card-subtitle text-muted">{{ post.subtitle }}</h6>
+                <p class="card-text">
+                    {% if post.excerpt %}    
+                        {{ post.excerpt }}
+                    {% endif %}
+                </p>
+                <a class="postlink" href="{{post.url}}">continue reading.</a>
             </div>
-            <div class="card-block">
-                hi! read <a href="{{ post.url }}">this now! </a>
-            </div>
+
+
+            {% if post.reference %}    
+                <div class="card-footer text-muted"> 
+                    {{post.reference}}
+                </div>
+            {% endif %}
         </div>    
     </div>
     {% endfor %}

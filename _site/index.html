@@ -8,22 +8,30 @@
     <meta name="description" content="">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/custom.css" rel="stylesheet">
-   
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   </head>
 
+  <div id="holder">
   <body role="document">
-    <div class="container">
+    <div class="container navbar-container" >
       <nav class="navbar navbar-light bg-faded">
         <div class="navbar-header">
+
         <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#nav-content" aria-expanded="false">
         &#9776;
         </button>
+
          <a href="/index.html" class="navbar-brand">@henripal</a>
+         <ul class="nav navbar-nav pull-right">
+           <li class="nav-item"><a href="https://twitter.com/henripal"><i class="fa fa-twitter navicon"></i> </a></li>
+           <li class="nav-item"><a href="https://www.facebook.com/hpalacci"><i class="fa fa-facebook navicon"></i> </a></li>
+         </ul>
       </div>
         <div class="collapse navbar-toggleable-xs" id="nav-content">
           <ul class="nav navbar-nav">
@@ -48,57 +56,55 @@
     
     <div class="grid-item">
         <div class="card">
+
             
-             <img class="card-img-top" src="/img/2015-10-01-JC.png"/>
+                <a href="/2015/10/01/JC/"><img  class="card-img-top" src="/img/2015-10-01-JC.png"/></a>
             
+
             <div class="card-block">
-                <h4 class="card-title">HTML5 Presentation</h4>
-                <p class="card-text">you should read this</p>
+                <h4 class="card-title">
+                    <a href="/2015/10/01/JC/" class="cardlink">thermodynamics of information</a>
+                </h4>
+
+                <h6 class="card-subtitle text-muted">an example of HTML5 presentation</h6>
+                <p class="card-text">
+                        
+                        <p>A presentation of the wonderful review by Parrondo et al. made using <a href="http://lab.hakim.se/reveal-js/#/">Reveal.js</a>.</p> 
+                    
+                </p>
+                <a class="postlink" href="/2015/10/01/JC/">continue reading.</a>
             </div>
-            <div class="card-block">
-                hi! read <a href="/2015/10/01/JC/">this now! </a>
-            </div>
+
+
+                
+                <div class="card-footer text-muted"> 
+                    Parrondo, Juan M. R., Jordan M. Horowitz, and Takahiro Sagawa. <a href="http://www.nature.com/nphys/journal/v11/n2/full/nphys3230.html">Thermodynamics of Information</a>. Nature Physics 11, no. 2 (February 2015)
+                </div>
+            
         </div>    
     </div>
     
     <div class="grid-item">
         <div class="card">
+
             
+
             <div class="card-block">
-                <h4 class="card-title">Embedded JS</h4>
-                <p class="card-text">you should read this</p>
+                <h4 class="card-title">
+                    <a href="/2015/09/29/brickbreaker/" class="cardlink">interactive simulations</a>
+                </h4>
+
+                <h6 class="card-subtitle text-muted">javascript experiments</h6>
+                <p class="card-text">
+                        
+                        <p>Testing Javascript coding ideas with the objective of implementing simple interactive molecular dynamics.</p>
+                    
+                </p>
+                <a class="postlink" href="/2015/09/29/brickbreaker/">continue reading.</a>
             </div>
-            <div class="card-block">
-                hi! read <a href="/2015/09/29/firstpost/">this now! </a>
-            </div>
-        </div>    
-    </div>
-    
-    <div class="grid-item">
-        <div class="card">
+
+
             
-            <div class="card-block">
-                <h4 class="card-title">Mouse control</h4>
-                <p class="card-text">you should read this</p>
-            </div>
-            <div class="card-block">
-                hi! read <a href="/2015/09/29/brickbreaker/">this now! </a>
-            </div>
-        </div>    
-    </div>
-    
-    <div class="grid-item">
-        <div class="card">
-            
-             <img class="card-img-top" src="/img/2015-09-28-zerothpost.png"/>
-            
-            <div class="card-block">
-                <h4 class="card-title">Linking towards full HTML5 presentations</h4>
-                <p class="card-text">you should read this</p>
-            </div>
-            <div class="card-block">
-                hi! read <a href="/2015/09/28/zerothpost/">this now! </a>
-            </div>
         </div>    
     </div>
     
@@ -107,13 +113,15 @@
   
 </div>
 
-
+<div class="footer text-center text-muted">
+  <small>page made with <a href="http://v4-alpha.getbootstrap.com/">bootstrap 4</a>, <a href="http://jekyllrb.com/">jekyll</a>, and <a href="http://masonry.desandro.com/">masonry</a>. <a href="https://github.com/henripal/henripal.github.io">source <i class="fa fa-github"></i></a>.</small>
+</footer>
 
 
  <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/masonry.pkgd.min.js"></script>
 
@@ -160,5 +168,6 @@
 </script>
 
 </body>
+</div>
 </html>
 
