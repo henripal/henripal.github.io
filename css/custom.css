@@ -33,10 +33,24 @@ body {
 .card {margin: .5em;}
 
 @media screen and (max-width: 550px) {
-  /* 5 columns for larger screens */
+  /* for smaller screens */
   .grid-sizer,
     .grid-item { width: 100%; padding: 0;}
   .grid-item--width2 { width: 100%; padding: 0; }
+  body {
+    padding-right: 0.1em;
+    padding-left: 0.1em;
+  }
+  div[role=main] {
+    padding-right: 0.1em;
+    padding-left: 0.1em;
+  }
+  .navbar-container {
+    padding-right: 0.1em;
+    padding-left: 0.1em;
+    }
+
+    .card {margin: .1em;}
 }
 
  div[role=main] {
