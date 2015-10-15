@@ -9,4 +9,3 @@ permalink: pretty
 
 gems: 
     - jekyll-sitemap
-    - jekyll-feed
