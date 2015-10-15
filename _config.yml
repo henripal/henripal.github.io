@@ -6,3 +6,6 @@ url: "http://localhost:4000"
 
 markdown: rdiscount
 permalink: pretty
+
+gems:
+  - jekyll-sitemap
