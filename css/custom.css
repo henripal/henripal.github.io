@@ -96,3 +96,9 @@ body {
 .navicon:hover {
     color: blue;
 }
+
+/*image sources*/
+.image-attr {
+  color: gray;
+  font-size: .7rem;
+}

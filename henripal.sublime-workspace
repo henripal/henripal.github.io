@@ -16,10 +16,7 @@
 	"buffers":
 	[
 		{
-			"contents": "---\nlayout: default\nmenugroup: projects\n---\n\n<div class=\"grid\">\n    <div class=\"grid-sizer\"></div>\n    {% for post in site.posts %}\n    <div class=\"grid-item\">\n        <div class=\"card\">\n\n            {% if post.thumbnail %}\n                <a href=\"{{ post.url }}\"><img  class=\"card-img-top\" src=\"{{ post.thumbnail }}\"/></a>\n            {% endif %}\n\n            <div class=\"card-block\">\n                <h4 class=\"card-title\">\n                    <a href=\"{{ post.url }}\" class=\"cardlink\">{{ post.title }}</a>\n                </h4>\n\n                <h6 class=\"card-subtitle text-muted\">{{ post.subtitle }}</h6>\n                <p class=\"card-text\">\n                    {% if post.excerpt %}    \n                        {{ post.excerpt }}\n                    {% endif %}\n                </p>\n                <a class=\"postlink\" href=\"{{post.url}}\">continue reading.</a>\n            </div>\n\n\n            {% if post.reference %}    \n                <div class=\"card-footer text-muted\"> \n                    {{post.reference}}\n                </div>\n            {% endif %}\n        </div>    \n    </div>\n    {% endfor %}\n</div>\n",
 			"file": "index.html",
-			"file_size": 1124,
-			"file_write_time": 130891821700000000,
 			"settings":
 			{
 				"buffer_size": 1124,
@@ -30,23 +27,15 @@
 			"file": "_includes/header.html",
 			"settings":
 			{
-				"buffer_size": 2255,
+				"buffer_size": 2254,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "_includes/footer.html",
+			"file": "_config.yml",
 			"settings":
 			{
-				"buffer_size": 2073,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_site/sitemap.xml",
-			"settings":
-			{
-				"buffer_size": 4842,
+				"buffer_size": 266,
 				"line_ending": "Unix"
 			}
 		},
@@ -62,7 +51,7 @@
 			"file": "css/custom.css",
 			"settings":
 			{
-				"buffer_size": 1344,
+				"buffer_size": 1414,
 				"line_ending": "Unix"
 			}
 		},
@@ -84,6 +73,22 @@
 				"buffer_size": 1495,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "_includes/footer.html",
+			"settings":
+			{
+				"buffer_size": 2073,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_posts/2015-09-29-brickbreaker.html",
+			"settings":
+			{
+				"buffer_size": 713,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -93,8 +98,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 147.0,
-		"last_filter": "install",
+		"height": 187.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -130,7 +135,7 @@
 				"Package Control: Discover Packages"
 			]
 		],
-		"width": 467.0
+		"width": 575.0
 	},
 	"console":
 	{
@@ -160,9 +165,9 @@
 	],
 	"file_history":
 	[
+		"/Users/henripal/projects/henripal.github.io/_site/sitemap.xml",
 		"/Users/henripal/projects/henripal.github.io/_config.yml",
 		"/Users/henripal/projects/henripal.github.io/_posts/2015-09-29-brickbreaker.html",
-		"/Users/henripal/projects/henripal.github.io/_site/sitemap.xml",
 		"/Users/henripal/projects/henripal.github.io/Gemfile",
 		"/Users/henripal/projects/henripal.github.io/node_modules/imagesloaded/imagesloaded.pkgd.min.js",
 		"/Users/henripal/projects/henripal.github.io/_posts/2015-10-01-JC.html",
@@ -245,7 +250,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -275,7 +280,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -284,80 +289,20 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2255,
+						"buffer_size": 2254,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								384,
-								384
+								134,
+								134
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 250.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "_includes/footer.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2073,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								59,
-								59
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 376.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "_site/sitemap.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4842,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								536,
-								536
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -365,11 +310,39 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 2,
+					"file": "_config.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 266,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								161,
+								161
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage"
+						},
+						"translation.x": 479.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "Gemfile",
 					"semi_transient": false,
 					"settings":
@@ -393,24 +366,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "css/custom.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1344,
+						"buffer_size": 1414,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								618,
-								618
+								0,
+								0
 							]
 						],
 						"settings":
@@ -423,11 +396,11 @@
 						"translation.y": 117.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "myjs/brickbreaker.js",
 					"semi_transient": false,
 					"settings":
@@ -451,11 +424,11 @@
 						"translation.y": 1546.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "myjs/testcript.js",
 					"semi_transient": false,
 					"settings":
@@ -480,7 +453,71 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 7,
+					"file": "_includes/footer.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2073,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1285,
+								1285
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "_posts/2015-09-29-brickbreaker.html",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								274,
+								274
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -503,11 +540,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.482524601382,
 			1.0
 		],
 		"rows":
@@ -549,7 +593,7 @@
 		[
 			[
 				"",
-				"~/Dropbox/School/Enzyme proj/New Data/xixi.sublime-project"
+				"~/projects/tweets/tweet.sublime-project"
 			]
 		],
 		"width": 380.0
@@ -563,7 +607,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},

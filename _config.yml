@@ -7,5 +7,5 @@ url: "http://henripal.github.io"
 markdown: rdiscount
 permalink: pretty
 
-gems: 
-    - jekyll-sitemap
+# gems:
+    # - jekyll-sitemap

@@ -20,7 +20,7 @@ menugroup: projects
 
                 <h6 class="card-subtitle text-muted">{{ post.subtitle }}</h6>
                 <p class="card-text">
-                    {% if post.excerpt %}    
+                    {% if post.excerpt %}
                         {{ post.excerpt }}
                     {% endif %}
                 </p>
@@ -28,12 +28,12 @@ menugroup: projects
             </div>
 
 
-            {% if post.reference %}    
-                <div class="card-footer text-muted"> 
+            {% if post.reference %}
+                <div class="card-footer text-muted">
                     {{post.reference}}
                 </div>
             {% endif %}
-        </div>    
+        </div>
     </div>
     {% endfor %}
 </div>
