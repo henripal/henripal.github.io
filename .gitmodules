@@ -4,3 +4,6 @@
 [submodule "JCoct1"]
 	path = JCoct1
 	url = https://github.com/henripal/JCoct1.git
+[submodule "pixiMD"]
+	path = pixiMD
+	url = https://github.com/henripal/pixiMD/
