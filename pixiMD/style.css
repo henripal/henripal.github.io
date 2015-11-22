@@ -1,0 +1,70 @@
+body {
+            padding: 0;
+            margin: 0;
+            background-color: #000;
+            font-family: "Open Sans",sans-serif;
+            color: white;
+        }
+
+.container {
+    /*position:relative;*/
+    padding:0 0 0 0 0px;
+}
+
+#title {
+    padding-top: 0px;
+    background-color: rgb(14,15,16);
+}
+
+#fps {
+    text-align: right;
+    color: white;
+    position: absolute;
+    right: 0px;
+    top: 7px;
+}
+
+#input {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0px 10px 0px 10px;
+    width: 250px;
+    height: 700px;
+
+    background-color: rgb(48,49,50);
+}
+
+#reload {
+    width: 70px;
+    height: 26px;
+    margin-top: 20px;
+    margin-left:  80px;
+    font-size: 0.9em;
+}
+
+.sliders {
+/*margin: 15px;*/
+}
+
+#slider-value {
+color: white;
+}
+
+.ui-slider {
+    height: .2em;
+}
+
+.ui-slider .ui-slider-handle {
+    cursor: default;
+    margin-left: -.25em;
+    height: .6em;
+    /*position: absolute;*/
+    width: .5em;
+    /*z-index: 2;*/
+}
+
+#input p,div{
+    font-size: .9em;
+}
