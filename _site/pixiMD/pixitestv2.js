@@ -1,6 +1,6 @@
 // main variable declarations
-w = 600;
-h = 400;
+w = 800;
+h = 500;
 var PxPerUnit = w/50;
 
 // FPS show
@@ -24,7 +24,7 @@ var stage = new PIXI.Container();
 // generating the particle container
 var sprites = new PIXI.ParticleContainer(alpha = false); // option ParticleContainer or Container
 stage.addChild(sprites);
-sprites.alpha= 0.7;
+// sprites.alpha= 0.7;
 
 // generating the aspect of our particles
 var graphics = new PIXI.Graphics(alpha= false); //option alpha = true
@@ -66,7 +66,7 @@ if(renderer instanceof PIXI.CanvasRenderer) {
     var totalParticles = 100;
 } else {
     //webGL renderer
-    var totalParticles = 200;
+    var totalParticles = 400;
 }
 
 var particles = [];
@@ -74,7 +74,9 @@ var j = 0;
 
 // initalize the particles
 for (var i = 0; i < totalParticles; i++) {
-        var dude = new PIXI.Sprite(graphics.generateTexture());
+        // var dude = new PIXI.Sprite(graphics.generateTexture());
+        var texture = PIXI.Texture.fromImage('./img/whitecircle.png');
+        var dude = new PIXI.Sprite(texture,cacheAsBitmap = true);
         dude.vx = 0;
         dude.vy = 0;
         dude.ax = 0;
@@ -170,13 +172,13 @@ var acceleration = function(x, y, vx, vy, t, Fx, Fy, D, gamma, gravity) {
 var time = 0;
 var count = 0;
 var dt = 1/6000;
-var D = 0;
-var gamma = 10000;
-var normF = [0,0];
-var minDistance =0;
+var D = 15000;
+var gamma = 5;
+var normF = [3, 3];
+var minDistance = 0;
 var gravity = 0;
 var frameNumbers = 6;
-var cutOff = 3*3;
+var cutOff = 3*PxPerUnit;
 
 requestAnimationFrame(animate);
 
