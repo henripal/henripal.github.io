@@ -1,11 +1,27 @@
-name: "@henripal"
-description: "Henri Palacci: small interactive scientific projects in JS and HTML5. Molecular dynamics, biological physics, thermodynamics, ..."
-
-url: "http://henripal.github.io"
+# Blog settings
+permalink: /blog/:title
 
 
-markdown: rdiscount
-permalink: pretty
+# My variables
+name: Henri Palacci 
+description: Physics and Stats 
+google_verification: null
 
-# gems:
-    # - jekyll-sitemap
+
+# File management
+include: [".htaccess"]
+exclude: ["README.md", "LICENSE"]
+
+
+# Sass
+sass:
+  style: :compressed
+  sass_dir: _sass
+
+
+# Markdown
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
