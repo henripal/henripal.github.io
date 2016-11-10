@@ -28,8 +28,14 @@
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/vis/4.17.0/vis.min.css">
 <style type="text/css">
         #mynetwork {
-            width: 36em;
-            height: 14em;
+        height: 200px;
+        	max-width: 600px;
+	margin: auto;
+	padding: 0px 0px 0px 0px;
+	@media screen and (max-width: $br) {
+		padding: 2px;
+	}
+
             border: 1px solid lightgray;
         }
     </style>
