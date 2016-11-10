@@ -197,29 +197,6 @@ ul {
 				margin: auto;
 			}
 		}
-		code {
-			padding: 3px;
-			font-size: 0.9em;
-			border-radius: 3px;
-			background: $color-grey;
-		}
-		.highlight {
-			margin: 10px;
-			margin-bottom: 15px;
-			padding: 10px;
-			line-height: 1.5;
-			border-radius: 3px;
-			background: $color-black;
-			code {
-				color: $color-code;
-				background: none;
-			}
-		}
-		.codebreak {
-			margin: 15px;
-			border: 0;
-			border-bottom: 1px dashed $color-black;
-		}
 	}
 }
 
@@ -247,3 +224,6 @@ ul {
 }
 
 $serif: "MJX_Main", serif;
+pre > code {
+    font-family: "Inconsolata", "Sans Mono", "Consolas", "Courier", monospace;
+}
