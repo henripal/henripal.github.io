@@ -3,10 +3,13 @@ layout: post
 title: A look at SGD from a physicist's perspective - Part 1
 ---
 As a biophysics PhD student with a background in Applied Math and statistics, it's hard not to be interested in Machine Learning. I'm currently working on drawing some (recent!) ideas from non-equilibrium statistcal physics and applying the to stochastic gradient descent, so I decided it would be a good idea to organize my thoughts by writing a couple of blog posts.
-The plan (yikes!) is to chronologically cover one or more important articles in the field, in an synthetic and not-too-technical way. This post will mainly be about Radford Neal's seminal '92 paper, [Bayesian Learning via Stochastic Dynamics](https://papers.nips.cc/paper/613-bayesian-learning-via-stochastic-dynamics), and the goal is to progressively make our way to modern approaches to stochastic gradient langevin dynamics. 
+The plan (yikes!) is to chronologically cover one or more important articles in the field, in an synthetic and not-too-technical way. This post will cover great references in the field, and a brief introduction to the analogies between statistical physics and machine learning. The next post will focus on Radford Neal's seminal '92 paper, [Bayesian Learning via Stochastic Dynamics](https://papers.nips.cc/paper/613-bayesian-learning-via-stochastic-dynamics), and the goal is to progressively make our way to modern approaches to stochastic gradient langevin dynamics. 
 Of course, this line of research is not new at all, so I'll start by outlining some of my favorite references. Let me know if you think I need to add anything.
 
 # Preliminary: Some Cool References
+
+<img src='https://media.giphy.com/media/3otOKtnGppPi5Q4hOw/giphy.gif' width='100%'>
+
 There's a swath of litterature (starting in the early nineties) making connections between physics and machine learning. Some example articles from the nineties that I like:
 - [Statistical mechanics of learning from examples](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.45.6056), '92, Seung, Sompolinsky, and Tishby
 - [Statistical mechanics of learning a rule](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.65.499), '93, Watkin et al.
@@ -28,6 +31,9 @@ Finally, some really good blog posts about these connections:
 
 # Thermodynamics in 3 minutes
 
+
+<img src='https://media.giphy.com/media/12esnm95olJYGY/giphy.gif' width='100%'>
+
 Before we even get started, let's cover a couple of concepts in thermodynamics.
 
 ## Classical Thermodynamics / Statistical Mechanics
@@ -39,7 +45,24 @@ The former, energetic force is very familiar to us. The latter only holds for mi
 
 The 'knob' that adjusts the balance of forces between the energetic and entropic forces is the *temperature*. The higher the temperature, the higher the randomness, and the more the entropic force will dominate. This is exactly what happens when you turn on your stove and the water starts to boil: the molecules start being more random, and explore more configurations, at the expense of the energetic force that makes them want to stick together. When the entire pot has been turned to steam, the energetic force is zero, but the number of ways the molecules can be uniformly distributed around the room is exponentially larger than the number of ways they can be distributed in the pot. 
 
-At this point you may already ask - how is this even linked to machine learning? Let's think of each particle as being similar to each element of some parameter vector $$\mathbf{w}$$, like the coefficients in your linear regression, or the weights in your deep learning network. In the same way that the particles settle into an energetic minimum, the weights will settle into a configuration that minimizes a loss function. So, here we have our first bridge between thermodynamics and machine learning:
+At this point you may already ask - how is this even linked to machine learning? Let's think of each particle $$i$$ having a velocity $$p_i$$ and a position $$q_i$$ as being similar to each element $$w_i$$ of some parameter vector $$\mathbf{w}$$, like the coefficients in your linear regression, or the weights in your deep learning network. In the same way that the particles settle into an energetic minimum, the weights will settle into a configuration that minimizes a loss function. So, here we have our first bridge between thermodynamics and machine learning:
 
-> Energy equals Function
->
+*Energy in a given configuration (**p**, **q**) = Loss Function (**w**)*
+
+Ok, you say, but what I'm really interested in is not so much where we end up, as how to get there! Well, that's one of the main problems in linking statistical mechanics to machine learning. Statistical mechanics was traditionally mostly concerned with *equilibrium* states; that is, states in which the energy is minimum for the given entropy, or states in which the entropy is maximum for the given energy. In other words, when everything has settled down. To say interesting things about how we converge to the equilibrium state, we need to talk a little bit about...
+
+## Non-equilibrium statistical mechanics
+
+Non-equilibrium statistical mechanics has a little bit of a rocky history. Many physicists will internally roll their eyes when you mention the subject. Why is that? Well, to start, almost everything in thermodynamics only has a meaning at equilibrium. For example, the concept of entropy doesn't even exist out of equilibrium. To top it off, one of the most famous thermodynamicists and Nobel laureates, [Ilya Prigogine](https://en.wikipedia.org/wiki/Ilya_Prigogine) came up with an out of equilibrium thermodynamic rule, the 'minimum  entropy production principle', which turned out to be wrong...
+
+That said, two major results in the nineties, the [Crooks](https://en.wikipedia.org/wiki/Crooks_fluctuation_theorem) and [Jarzynski](https://en.wikipedia.org/wiki/Jarzynski_equality) fluctuation theorems, have since then legitimized more recent approaches to non-equilibrium thermodynamics, and have even seen many [experimental verifications](https://www.nature.com/nature/journal/vaop/ncurrent/abs/nature04061.html).
+
+To get back to our water analogy, imagine this time that you have a bottle of water sitting on your table. We've already said that the equilibrium state of the water bottle, with the water uniformly distributed at the bottom of the water, is the result of classical thermodynamic forces. Now, shake the bottle and put it back down. The process between the moment that the water bottle is put down and the moment that the water settles again into its equilibrium state is called *relaxation*. It's a little bit past the scope of these posts, but it turns out that a major concept to quantify relaxation from non-equilibrium state is *Shannon Information*, or, and perhaps more intuitively, the KL-Divergence between the equilibrium distribution and the non-equilibrium distribution.
+
+Getting back to our ML algorithm, the transformation from our initial, randomly distributed weights, to our final, minimum loss weights, is the exact mirror of this thermodynamic relaxation from an initial non-equilibrium state. This gives us our second analogy between machine learning and statistical physics:
+
+*Relaxation from an initial non-equilibrium state  = Optimizing weights to learn from examples*
+
+"Wait, but what about entropy?" you say? Well, there's also some cool bridges there, but they'll be easier to understand once we've covered next post's article, Radford Neal's [Bayesian Learning via Stochastic Dynamics](https://papers.nips.cc/paper/613-bayesian-learning-via-stochastic-dynamics)
+
+Please don't hesitate to email me any feedback or questions! Thanks for reading.
