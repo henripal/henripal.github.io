@@ -38,7 +38,7 @@ The result of this experiment was very interesting. In the control experiment, t
 
 This means that the enzyme travelled up its gradient to go towards its substrate. To see why this is strange, think about a drop of ink in water. If you let the system sit, the ink will eventually diffuse in the water; the ink will never diffuse back to where you initially added the drop. This is essentially what the enzyme is doing: it 'senses' the presence of its substrate and 're-concentrates' in the areas where there is more substrate.
 
-Writing down a physically plausible theory for why and how this happens was my main contribution to this [Nature Chemistry paper](https://www.nature.com/articles/nchem.2905) paper. I'll briefly try to explain the main idea, Cross-Diffusion, in a hand-wavy way.
+Writing down a physically plausible theory for why and how this happens was my main contribution to this [Nature Chemistry](https://www.nature.com/articles/nchem.2905) paper. I'll briefly try to explain the main idea, Cross-Diffusion, in a hand-wavy way.
 
 ## Cross-diffusion
 
