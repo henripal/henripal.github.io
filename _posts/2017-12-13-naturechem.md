@@ -52,4 +52,4 @@ Back to our enzymes. Like the ink molecules and the ball rolling down the hill, 
 
 This is why we see the very counter-intuitive effect of the enzymes 'aggregating' in little huddles!
 
-I hope this motivates you to read [our paper](/assets/pdf/nchem.2905.pdf) - and I thank the purists and experts for tolerating some of my approximations )
+I hope this motivates you to read [our paper](/assets/pdf/nchem.2905.pdf) - and I thank the purists and experts for tolerating some of my approximations :)
