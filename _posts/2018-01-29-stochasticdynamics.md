@@ -3,7 +3,7 @@ layout: post
 title: A look at SGD from a physicist's perspective - Part 1
 ---
 As a biophysics PhD student with a background in Applied Math and statistics, it's hard not to be interested in Machine Learning. I'm currently working on drawing some ideas from non-equilibrium statistical physics and applying them to stochastic gradient descent. I decided it would be a good idea to organize my thoughts by writing a few of blog posts.
-My plan is to chronologically cover one or more important articles in the field, in a synthetic and not-too-technical way. This post will cover great references in the field, and provide a brief introduction to the analogies between statistical physics and machine learning. My next post will focus on Radford Neal's seminal '92 paper, [Bayesian Learning via Stochastic Dynamics](https://papers.nips.cc/paper/613-bayesian-learning-via-stochastic-dynamics), and the goal is to progressively make our way to modern approaches to stochastic gradient Langevin dynamics. 
+My plan is to chronologically cover one or more important articles in the field, in a synthetic and not-too-technical way. This post will cover great references in the field, and provide a brief introduction to the analogies between statistical physics and machine learning. My next post (now up - see [here]({% post_url 2018-01-30-nealbayesian %})) will focus on Radford Neal's seminal '92 paper, [Bayesian Learning via Stochastic Dynamics](https://papers.nips.cc/paper/613-bayesian-learning-via-stochastic-dynamics), and the goal is to progressively make our way to modern approaches to stochastic gradient Langevin dynamics. 
 This line of research is not new at all, so I'll start by outlining some of my favorite references. Let me know if you think I need to add anything.
 
 # Preliminary: Some Cool References
@@ -67,4 +67,4 @@ Getting back to our ML algorithm, the transformation from our initial, randomly 
 
 But, what about entropy, you wonder. Well, there's also some interesting connections there, but they'll be easier to understand once we've covered next post's article, Radford Neal's [Bayesian Learning via Stochastic Dynamics](https://papers.nips.cc/paper/613-bayesian-learning-via-stochastic-dynamics).
 
-Please don't hesitate to email me any feedback or questions! Thanks for reading.
+Please don't hesitate to email me any feedback or questions! Thanks for reading, and please check out [part 2]({% post_url 2018-01-30-nealbayesian %})! 
