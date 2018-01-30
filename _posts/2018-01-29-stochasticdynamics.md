@@ -65,6 +65,6 @@ Getting back to our ML algorithm, the transformation from our initial, randomly 
 
 *Relaxation from an initial non-equilibrium state  = Optimizing weights to learn from examples*
 
-But, what about entropy, you wonder. Well, there's also some interesting connections there, but they'll be easier to understand once we've covered next post's article, Radford Neal's [Bayesian Learning via Stochastic Dynamics].(https://papers.nips.cc/paper/613-bayesian-learning-via-stochastic-dynamics)
+But, what about entropy, you wonder. Well, there's also some interesting connections there, but they'll be easier to understand once we've covered next post's article, Radford Neal's [Bayesian Learning via Stochastic Dynamics](https://papers.nips.cc/paper/613-bayesian-learning-via-stochastic-dynamics).
 
 Please don't hesitate to email me any feedback or questions! Thanks for reading.
