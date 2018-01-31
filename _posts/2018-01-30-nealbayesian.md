@@ -5,6 +5,8 @@ title: A look at SGD from a physicists's perspective - Part 2, Bayesian Deep Lea
 
 This is part 2 of a series of introductory posts on the connections between physics and machine learning. In [part 1]({% post_url 2018-01-29-stochasticdynamics %}), we ran through a quick introduction to the basic notions of thermodynamics. We made the fundamental point that a physical system relaxing to equilibrium by minimizing its energy was analogous to a machine learning model minimizing its loss. In other words, shaking a bottle of water then putting it on your table and waiting for it to settle is the same as training a model. The water molecules settle in the state that minimizes the energy of the system, while the weights of your model settle into the state that minimizes your loss function. 
 
+<img src='https://media.giphy.com/media/suvvLHUB335Je/giphy.gif' width='100%'>
+
 In this post, we'll take some steps towards making this explanation more precise. The very first hurdle we run into is that there is a fundamental difference between your neural network after training and the molecules sitting at the bottom of the bottle: the water appears still, but the individual water molecules are constantly moving around; by contrast, the neural network's weights are fixed.
 
 Another way of saying this is that the water molecule's positions are characterized by *probability distributions*. We need to change the outcome of our algorithms so that instead of a point estimate, we also get probability distributions for the parameters. Beyond making our neural network look more like a physical system, there are many advantages to doing that: 
@@ -55,6 +57,8 @@ $$\begin{eqnarray}
 \end{eqnarray}$$
 
 Hmmm. It looked like our probabilities were easy to evaluate, but instead, we're left to evaluate an integral *everywhere* in a space of $$n$$ dimensions, where $$n$$ is the number of weights in our neural network. For ResNet, that would be an integral in a 60M dimensional space please. That's just never going to happen.
+
+<img src='/assets/img/yahtzee.png' align='middle' width='100%'>
 
 ## Evaluating difficult integrals, first try: Traditional Monte Carlo methods.
 
