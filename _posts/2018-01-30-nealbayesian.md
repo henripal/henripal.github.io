@@ -1,6 +1,6 @@
 ---
 layout: post
-title: A look at SGD from a physicists's perspective - part 2, Bayesian Deep Learning
+title: A look at SGD from a physicists's perspective - Part 2, Bayesian Deep Learning
 ---
 
 This is part 2 of a series of introductory posts on the connections between physics and machine learning. In [part 1]({% post_url 2018-01-29-stochasticdynamics %}), we ran through a quick introduction to the basic notions of thermodynamics and made the fundamental point that a physical system relaxing to equilibrium (minimizing its energy) was analogous to a machine learning model minimizing its loss. In other words, shaking a bottle of water then putting it on your table and waiting for it to settle down is the same as training a model. The water molecules settle in the state that minimizes the energy of the system, while the weights of your model settle into the state that minimizes your loss function. 
