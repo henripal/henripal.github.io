@@ -3,11 +3,11 @@ layout: post
 title: A look at SGD from a physicists's perspective - Part 2, Bayesian Deep Learning
 ---
 
-This is part 2 of a series of introductory posts on the connections between physics and machine learning. In [part 1]({% post_url 2018-01-29-stochasticdynamics %}), we ran through a quick introduction to the basic notions of thermodynamics and made the fundamental point that a physical system relaxing to equilibrium (minimizing its energy) was analogous to a machine learning model minimizing its loss. In other words, shaking a bottle of water then putting it on your table and waiting for it to settle down is the same as training a model. The water molecules settle in the state that minimizes the energy of the system, while the weights of your model settle into the state that minimizes your loss function. 
+This is part 2 of a series of introductory posts on the connections between physics and machine learning. In [part 1]({% post_url 2018-01-29-stochasticdynamics %}), we ran through a quick introduction to the basic notions of thermodynamics. We made the fundamental point that a physical system relaxing to equilibrium by minimizing its energy was analogous to a machine learning model minimizing its loss. In other words, shaking a bottle of water then putting it on your table and waiting for it to settle is the same as training a model. The water molecules settle in the state that minimizes the energy of the system, while the weights of your model settle into the state that minimizes your loss function. 
 
 In this post, we'll take some steps towards making this explanation more precise. The very first hurdle we run into is that there is a fundamental difference between your neural network after training and the molecules sitting at the bottom of the bottle: the water appears still, but the individual water molecules are constantly moving around; by contrast, the neural network's weights are fixed.
 
- In order to resolve this, we need FIX THIS to find for our weight vector $$w$$, not only an 'optimal' solution, but a *distribution* around this optimal solution. This might seem a little contrived - all we want is a functioning model - but having a distribution of weights has some really significant advantages:
+Another way of saying this is that the water molecule's positions are characterized by *probability distributions*. We need to change the outcome of our algorithms so that instead of a point estimate, we also get probability distributions for the parameters. Beyond making our neural network look more like a physical system, there are many advantages to doing that: 
 - we now have a way to *quantify uncertainty* around our predictions
 - the probability distribution for the weights lessens the variability in outcomes for learning algorithms
 - we get regularization for free
@@ -20,15 +20,15 @@ Ok, so we've seen in [part 1]({% post_url 2018-01-29-stochasticdynamics %}) that
 
 To mathematically solve this minimization/maximization problem, we have to specify more constraints. In statistical physics, the constraints come from the specific problem under study: Can my system exchange particles with another system? Is the total energy of my system constant? Is the entropy of my system constant?
 
-Looking at all these would require an entire chapter in a physics textbook, but it turns out that in many of these constrained systems, the probability distributions look the same, and probably are very familiar to most of you as a *softmax* distribution:
+Looking at all these would require an entire chapter in a physics textbook, but it turns out that in many of these constrained systems, the probability distributions maximizing entropy or minimizing energy look the same, and probably are very familiar to most of you as the *softmax* distribution:
 
 $$\begin{eqnarray}
 p(\mathbf{w})  \propto  e^{-\beta E(w)}
 \end{eqnarray}$$
 
-In physics, this is called the *Boltzmann* distribution. The probability of a given weight configuration is inversely proportional to the exponential of a constant $$\beta$$ multiplied by the energy $$E$$ of that configuration. The proof is relatively straightforward, especially in the case of a system with fixed total energy, but let's just go with it for now. It looks like the expression above does what we want: lower probabilities for configurations with higher energies. 
+In physics, this is called the *Boltzmann* distribution. The probability of a given weight configuration is inversely proportional to the exponential of the energy $$E$$ of that configuration multiplied by a constant $$\beta$$.  The proof is relatively straightforward, especially in the case of a system with fixed total energy, but let's just walk with it for now. It looks like the expression above does what we want: lower probabilities for configurations with higher energies. 
 
-What about the 'spread' of this distribution? It looks like it's going to depend on $$\beta$$: for very high values of $$\beta$$, even small deviations of the energy from its minimum will cause the probabilities to drop massively. It turns out that $$\beta=1/T$$, where $$T$$ is the temperature, which matches what we had said earlier: the higher the temperature, the more 'spread out' the distribution will be.
+What about the 'spread' of this distribution? It will depend on $$\beta$$: for very high values of $$\beta$$, even small deviations of the energy from its minimum will cause the probabilities to drop massively. It turns out that $$\beta=1/T$$, where $$T$$ is the temperature, which matches what we had said earlier: the higher the temperature, the more 'spread out' the distribution will be.
 
 This is where one of the major gaps in the statistical mechanics and machine learning bridges occurs. As much as the Boltzmann distribution is rigorously justified in many settings (or *ensembles*) in statistical mechanics, the adoption of this probability distribution in Bayesian ML is an assumption. Let's see why, and try to find out what that assumption entails.
 
@@ -40,13 +40,13 @@ $$\begin{eqnarray}
 E(\mathbf{w}) = \frac{1}{n}\sum_i \left( f \left( \mathbf{x_i}; \mathbf{w} \right) - y_i \right)^2
 \end{eqnarray}$$
 
-And the probability distribution of our weights instantly becomes:
+The probability distribution of our weights instantly becomes:
 
 $$\begin{eqnarray}
 p(\mathbf{w}) \propto \exp{\left[ -\beta\frac{1}{n}\sum_i \left( f \left( \mathbf{x_i}; \mathbf{w} \right) - y_i \right)^2\right]}
 \end{eqnarray}$$
 
-Wow! So, what we're really doing when we make the assumptions that 1) our loss is the MSE and 2) our weight probability distribution is Boltzmann, is choosing the weights are such that the distribution of errors is a *multivariate Gaussian*! Really, the way this came about historically is actually the opposite, so we certainly took the long way there.
+Wow! So, what we're really doing when we make the assumptions that 1) our loss is the MSE and 2) our weight probability distribution is Boltzmann, is choosing the weights are such that the distribution of errors is a *multivariate Gaussian*! In reality, the way this came about historically is actually the opposite, so we certainly took the long way there.
 
 It's easy to calculate this loss function for any data point. Does it mean computing this probability distribution is trivial? Not really. Consider getting a new example $$\mathbf{x_j}$$. What is our network's prediction? It wouldn't make sense to use one set of weights; what we really want is the *expectation* of the prediction under our probability distribution:
 
@@ -67,17 +67,17 @@ So, here's our first approach. We'll pick out a grid of weights, evaluate $$p(w)
 
 The river analogy brings up another idea. What if we started walking (randomly) across the U.S., and when we reached the Mississipi, we kept exploring the area without straying too far away?
 
-Let's describe this more formally. We start out in a random position $$x$$ on the map. Then we pick a nearby potential next position $$y$$. To judge if $$y$$ is an acceptable candidate, we compute $$\alpha = p(y)/p(x)$$. If this ratio is greater than 1, then $$y$$ is more likely than $$x$$, and we head there. If the ratio is less than 1, this might not be a good move, but we need to keep exploring, so we flip a biased coin with probability $$\alpha$$ of landing on heads, and we move if the coin lands on heads.
+Let's describe this approach more formally. We start out in a random position $$x$$ on the map. Then we pick a nearby candidate next position $$y$$. To judge if $$y$$ is an acceptable candidate, we compute $$\alpha = p(y)/p(x)$$. If this ratio is greater than 1, then $$y$$ is more likely than $$x$$, and we head there. If the ratio is less than 1, this might not be a good move, but we need to keep exploring, so we flip a biased coin with probability $$\alpha$$ of landing on heads, and we move if the coin lands on heads.
 
 It turns out this is going to solve both our problems:
 - when we're in the river, and we're thinking about our next sample, all we need is a ratio of probabilities; we don't need to evaluate the costly normalizing constant
 - we're going to waste a lot of time at first trying to find the Mississipi, but when we've found it, our sampling should be reasonably efficient
 
-This algorithm is the [Metropolis-Hastings](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm) algorithm, and it's a reasonably good algorithm to evaluate difficult integrals.
+This algorithm is the [Metropolis-Hastings](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm) algorithm, and it's a decent algorithm to evaluate difficult integrals.
 
 The issue is, what if you're asked to evaluate the depth of both the Mississippi and Yukon rivers? With the Metropolis-Hastings algorithm, you'll get stuck in the first river you come across. 
 
-This issue, of *multi-modality* is going to be prevalent in neural networks weight probability distributions. To see why, think about two nodes, A and B, in a neural net you've trained. You'll get the exact same result if A and B are reversed along with their connected nodes; that's two identical solutions and a clear indication that the probability distribution will be multimodal.
+This issue, *multi-modality*, is going to be prevalent in neural networks weight probability distributions. To see why, think about two nodes, A and B, in a neural net you've trained. You'll get the exact same result if A and B are reversed along with their connected nodes; that's two identical solutions and a clear indication that the weight probability distribution will be multimodal.
 
 So, still no good. We need a way to make big steps, even when we're in the right place.
 
@@ -103,7 +103,7 @@ We need something that can deal with modern architectures and datasets. We'll ta
 
 Ok, if you're curious about the subjects we've brushed on here, I can't recommend enough Michael Betancourt's  [Conceptual Introduction to Hamiltonian Monte Carlo](https://arxiv.org/abs/1701.02434) - it's a fantastic 60 page introduction with a *lot* of visuals.
 
-Something we haven't mentioned at all is the variational approach. I'll link again to Jaan Altosaar's [blog post](https://jaan.io/how-does-physics-connect-machine-learning/) covering the similarities between ML and physics, from a variational point of view.
+Something we haven't mentioned at all is the variational approach; instead of computing the probability distribution exactly, we approximate it using another familty of simpler probability distributions. Check out Jaan Altosaar's [blog post](https://jaan.io/how-does-physics-connect-machine-learning/) covering the similarities between ML and physics from a variational point of view.
 
 And if you'd like a good refresher or intro to statistical mechanics, this is the book whose approach made me love the field: [Molecular Driving Forces](https://www.amazon.com/Molecular-Driving-Forces-Statistical-Thermodynamics/dp/0815344309)
 
