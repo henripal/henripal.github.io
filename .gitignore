@@ -5,3 +5,6 @@
 Gemfile.lock
 _site/
 _drafts/
+node_modules/
+.vscode/
+*.swp

@@ -10,7 +10,7 @@ google_verification: null
 
 # File management
 include: [".htaccess"]
-exclude: ["README.md", "LICENSE"]
+exclude: ["README.md", "LICENSE", node_modules, gulpfile.js]
 
 
 # Sass
@@ -24,3 +24,6 @@ markdown: kramdown
 kramdown:
   input: GFM
 highlighter: rouge
+
+gems:
+- jekyll-browsersync
