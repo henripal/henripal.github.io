@@ -3,31 +3,8 @@ layout: post
 title: A look at SGD from a physicist's perspective - Part 1
 ---
 As a biophysics PhD student with a background in Applied Math and statistics, it's hard not to be interested in Machine Learning. I'm currently working on drawing some ideas from non-equilibrium statistical physics and applying them to stochastic gradient descent. I decided it would be a good idea to organize my thoughts by writing a few blog posts.
-My plan is to chronologically cover one or more important articles in the field, in a synthetic and not-too-technical way. This post will cover great references in the field, and provide a brief introduction to the analogies between statistical physics and machine learning. My next post (now up - see [here]({% post_url 2018-01-30-nealbayesian %})) will focus on Radford Neal's seminal '92 paper, [Bayesian Learning via Stochastic Dynamics](https://papers.nips.cc/paper/613-bayesian-learning-via-stochastic-dynamics), and the goal is to progressively make our way to modern approaches to stochastic gradient Langevin dynamics. 
-This line of research is not new at all, so I'll start by outlining some of my favorite references. Let me know if you think I need to add anything.
+My plan is to chronologically cover one or more important articles in the field, in a synthetic and not-too-technical way. This post will provide a brief introduction to the analogies between statistical physics and machine learning, and list some fundamental references in this field. My next post (now up - see [here]({% post_url 2018-01-30-nealbayesian %})) will focus on Radford Neal's seminal '92 paper, [Bayesian Learning via Stochastic Dynamics](https://papers.nips.cc/paper/613-bayesian-learning-via-stochastic-dynamics). The last post in this series (now up - see [here]({% post_url 2018-02-12-langevin %})) is the most practical; we'll show how this approach to deep learning allows our algorithms to identify examples that they *do not know* how to classify. Our goal is to progressively make our way to modern approaches to stochastic gradient Langevin dynamics. 
 
-# Preliminary: Some Cool References
-
-<img src='https://media.giphy.com/media/3otOKtnGppPi5Q4hOw/giphy.gif' width='100%'>
-
-There's a swath of litterature (starting in the early nineties) making connections between physics and machine learning. Some example articles from the nineties that I like are:
-- [Statistical mechanics of learning from examples](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.45.6056), '92, Seung, Sompolinsky, and Tishby
-- [Statistical mechanics of learning a rule](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.65.499), '93, Watkin et al.
-- [Relationship between PAC, the Statistical Physics framework, the Bayesian framework, and the VC framework](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.17.2855), '94,  Wolpert
-- [Rigorous learning curve bounds from statistical mechanics](https://link.springer.com/article/10.1023/A:1026499208981), '96, Haussler et al.
-
-There are even a couple of books that cover the subject more or less directly:
-- [Statistical Physics of Learning](https://www.amazon.com/Statistical-Mechanics-Learning-Engel/dp/0521773075), '01, Engel and Van den Broeck
-- [Information theory, inference, and learning algorithms](https://books.google.com/books?hl=en&lr=&id=AKuMj4PN_EMC&oi=fnd&pg=PR7&dq=mackay&ots=EMipf98yHi&sig=fu2OcHeDw0QQIbfDi-4Gf-DnplA), '03, MacKay
-- [Information, Physics, and computation](https://global.oup.com/academic/product/information-physics-and-computation-9780198570837?cc=us&lang=en&), '09, Mezard and Montanari
-
-This line of research is still actively being conducted - here are some more recent interesting articles are:
-- [Bayesian learning via stochastic gradient Langevin dynamics](https://www.ics.uci.edu/~welling/publications/papers/stoclangevin_v6.pdf), '11, Wellling and Teh
-- [Statistical Mechanics of High-Dimensional Inference](https://arxiv.org/abs/1601.04650), '16, Advani and Ganguli
-
-Finally, some really good blog posts about these connections:
-- [Jaan Altosaar's blog post](https://jaan.io/how-does-physics-connect-machine-learning/) covering the similarities between variational approaches in physics and variational inference
-- Shakir Mohamed's posts, for example [this one](http://blog.shakirm.com/2015/07/machine-learning-trick-of-the-day-1-replica-trick/) covering the replica trick.
 
 # Thermodynamics in 3 minutes
 
@@ -67,4 +44,30 @@ Getting back to our ML algorithm, the transformation from our initial, randomly 
 
 But, what about entropy, you wonder. Well, there's also some interesting connections there, but they'll be easier to understand once we've covered next post's article, Radford Neal's [Bayesian Learning via Stochastic Dynamics](https://papers.nips.cc/paper/613-bayesian-learning-via-stochastic-dynamics).
 
-Please don't hesitate to email me any feedback or questions! Thanks for reading, and please check out [part 2]({% post_url 2018-01-30-nealbayesian %})! 
+# References
+
+<img src='https://media.giphy.com/media/3otOKtnGppPi5Q4hOw/giphy.gif' width='100%'>
+
+There's a swath of litterature (starting in the early nineties) making connections between physics and machine learning. Some example articles from the nineties that I like are:
+- [Statistical mechanics of learning from examples](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.45.6056), '92, Seung, Sompolinsky, and Tishby
+- [Statistical mechanics of learning a rule](https://journals.aps.org/rmp/abstract/10.1103/RevModPhys.65.499), '93, Watkin et al.
+- [Relationship between PAC, the Statistical Physics framework, the Bayesian framework, and the VC framework](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.17.2855), '94,  Wolpert
+- [Rigorous learning curve bounds from statistical mechanics](https://link.springer.com/article/10.1023/A:1026499208981), '96, Haussler et al.
+
+There are even a couple of books that cover the subject more or less directly:
+- [Statistical Physics of Learning](https://www.amazon.com/Statistical-Mechanics-Learning-Engel/dp/0521773075), '01, Engel and Van den Broeck
+- [Information theory, inference, and learning algorithms](https://books.google.com/books?hl=en&lr=&id=AKuMj4PN_EMC&oi=fnd&pg=PR7&dq=mackay&ots=EMipf98yHi&sig=fu2OcHeDw0QQIbfDi-4Gf-DnplA), '03, MacKay
+- [Information, Physics, and computation](https://global.oup.com/academic/product/information-physics-and-computation-9780198570837?cc=us&lang=en&), '09, Mezard and Montanari
+
+This line of research is still actively being conducted - here are some more recent interesting articles are:
+- [Bayesian learning via stochastic gradient Langevin dynamics](https://www.ics.uci.edu/~welling/publications/papers/stoclangevin_v6.pdf), '11, Wellling and Teh
+- [Statistical Mechanics of High-Dimensional Inference](https://arxiv.org/abs/1601.04650), '16, Advani and Ganguli
+
+Finally, some really good blog posts about these connections:
+- [Jaan Altosaar's blog post](https://jaan.io/how-does-physics-connect-machine-learning/) covering the similarities between variational approaches in physics and variational inference
+- Shakir Mohamed's posts, for example [this one](http://blog.shakirm.com/2015/07/machine-learning-trick-of-the-day-1-replica-trick/) covering the replica trick.
+
+Please don't hesitate to email me any feedback or questions! Thanks for reading, and please check out [part 2]({% post_url 2018-01-30-nealbayesian %}) and [part 3]({% post_url 2018-02-12-langevin %}).
+
+---
+This work was supported by the ARO grant “Thermodynamics of Statistical Learning”, PI: H. Hess, ARO W911-NF-17-1-0107

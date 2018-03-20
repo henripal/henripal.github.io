@@ -111,4 +111,10 @@ Something we haven't mentioned at all is the variational approach; instead of co
 
 And if you'd like a good refresher or intro to statistical mechanics, this is the book whose approach made me love the field: [Molecular Driving Forces](https://www.amazon.com/Molecular-Driving-Forces-Statistical-Thermodynamics/dp/0815344309)
 
-Also remember to check out the references in [part 1]({% post_url 2018-01-29-stochasticdynamics %}) of this series!
+Also remember to check out the references in [part 1]({% post_url 2018-01-29-stochasticdynamics %}) of this series! 
+
+In the next post, we'll see how this can help deep learning algorithms identify data points for which they *don't know* what they should output: [part 3]({% post_url 2018-02-12-langevin %}).
+
+
+---
+This work was supported by the ARO grant “Thermodynamics of Statistical Learning”, PI: H. Hess, ARO W911-NF-17-1-0107
