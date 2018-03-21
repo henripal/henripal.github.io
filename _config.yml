@@ -4,8 +4,15 @@ permalink: /blog/:title
 
 # My variables
 name: Henri Palacci 
-description: Physics and Stats 
+description: A Blog About Physics, Machine Learning, and Uncertainty 
 google_verification: null
+twitter:
+  username: henripal
+social:
+  name: Henri Palacci
+  links:
+    - https://twitter.com/henripal
+    - https://www.linkedin.com/in/henri-palacci-a6974659/
 
 
 # File management
@@ -25,5 +32,7 @@ kramdown:
   input: GFM
 highlighter: rouge
 
-gems:
-- jekyll-browsersync
+
+plugins:
+  - jekyll-browsersync
+  - jekyll-seo-tag
