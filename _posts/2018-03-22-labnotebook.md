@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Building LabNotebook, a simple machine learning experiment manager 
+image: '../assets/img/labnotebook.gif'
 ---
 
 As a life sciences PhD, you spend most of your time doing experiments. Life science experiments are hard: 
