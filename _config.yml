@@ -32,7 +32,9 @@ kramdown:
   input: GFM
 highlighter: rouge
 
+url: "https://henripal.github.io"
 
 plugins:
   - jekyll-browsersync
   - jekyll-seo-tag
+  - jekyll-sitemap
