@@ -1,7 +1,3 @@
----
-layout: about
----
-
 Hi, my name is Henri Palacci. I am a recent PhD graduate from the Biomedical Engineering department at Columbia University, in the [Hess laboratory for nanobiotechnology and synthetic biology](http://orion.bme.columbia.edu/hess/).
 
 My research was focused on the application of non-equilibrium statistical physics to [statistical learning](https://arxiv.org/abs/1806.02855) or systems such as [self-assembling enzyme structures](https://www.nature.com/articles/nchem.2905) or [motor proteins](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=WAmP2uQAAAAJ&citation_for_view=WAmP2uQAAAAJ:u-x6o8ySG0sC). 
