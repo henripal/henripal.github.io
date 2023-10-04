@@ -1,3 +1,3 @@
 Under updating / reconstruction !
 
-[About me](_pages/me.md)
+[About me](pages/me.md)
