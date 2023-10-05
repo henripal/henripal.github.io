@@ -28,7 +28,7 @@ twitter_username: henripal
 github_username:  henripal
 
 # Build settings
-theme: math-minima
+remote-theme: math-minima
 plugins:
   - jekyll-feed
 
