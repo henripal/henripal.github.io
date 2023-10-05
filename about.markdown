@@ -8,7 +8,7 @@ Hi, my name is Henri Palacci. I'm a software engineer and machine learning scien
 
 I'm currently working on something new.
 
-I was previously VP of ML and head of engineering aaaataaaaaa
+I was previously VP of ML and head of engineering at [Anagenex](https://www.anagenex.com/), 
 
 I am a recent PhD graduate from the Biomedical Engineering department at Columbia University, in the [Hess laboratory for nanobiotechnology and synthetic biology](http://orion.bme.columbia.edu/hess/).
 
